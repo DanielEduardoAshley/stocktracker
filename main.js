@@ -32,6 +32,9 @@ class Storage{
 const storage = new Storage('app-state')
 
 //-----------GLOBAL HTML OBJECTS
+const login = document.querySelector('.js-loginbtn');
+const register = document.querySelector('.js-registerbtn');
+const gotoRegister = document.querySelector('.js-goto-register');
 
 //-----------STATE
 
