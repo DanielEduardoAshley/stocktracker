@@ -12,3 +12,5 @@ const dbconn = ((conn)=>{
     }  
     return connection 
 })('postgres://localhost/stocktracker')
+
+module.exports = dbconn
