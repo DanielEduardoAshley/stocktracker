@@ -11,7 +11,6 @@ DROP TABLE IF EXISTS users, stock;
      first_name VARCHAR,
      last_name VARCHAR,
      user_uid VARCHAR,
-     users_encryption VARCHAR,
      email VARCHAR,
      sessions_id VARCHAR NULL,
      cash_remaining INT DEFAULT 5000
@@ -26,8 +25,8 @@ CREATE TABLE stock
      quantity INT
 );
 
-INSERT INTO users
-VALUES('1', 'dan','ash','5678','1234', 'dan@gmail.com');
+INSERT INTO users (first_name, last_name, user_uid, email, sessions_id)
+VALUES('dan','ash','5678', 'dan@gmail.com','123');
 
-INSERT INTO stock
-VALUES('1', '1', 'AAPL', 100, 10);
+INSERT INTO stock (user_id, symbol, bought_price, quantity)
+VALUES(1, 'AAPL', 100, 10);

@@ -111,6 +111,14 @@ login.addEventListener('click', ()=>{
 })
 
 logout.addEventListener('click', ()=>{
+    firebase.auth().signOut()
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log('signed in')
+        }else{
+            console.log('signed out')
+        }
+      });
     state.show = 'login'
     storage.save(state)
     render(state)

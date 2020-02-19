@@ -1,3 +1,5 @@
+const pg = require('pg-promise')({})
+const dbconnection = pg('postgres://localhost/stocktracker')
 const dbconn = ((conn)=>{
     let db = null
     const connection=()=>{
@@ -13,4 +15,4 @@ const dbconn = ((conn)=>{
     return connection 
 })('postgres://localhost/stocktracker')
 
-module.exports = dbconn
+module.exports = dbconnection
