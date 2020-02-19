@@ -2,7 +2,7 @@ const userServices = {}
 const dbconn = require('../dbconnection')
 
 userServices.create=(first_name, last_name, email, token, uid)=>{
-return dbconn.one('INSERT INTO users VALUES(first_name={first_name}, last_name={last_name}, email={email}, session_id={token}, uid={uid} RETURNING id )', {first_name, last_name, email, token, uid})
+return dbconn.one('INSERT INTO users VALUES(first_name=${first_name}, last_name=${last_name}, email=${email}, session_id=${token}, uid=${uid} RETURNING id )', {first_name, last_name, email, token, uid})
 }
 
 
