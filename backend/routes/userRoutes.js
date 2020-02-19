@@ -41,3 +41,5 @@ userRoutes.put('/update', (req, res)=>{
 
 })
 
+
+module.exports = userRoutes
