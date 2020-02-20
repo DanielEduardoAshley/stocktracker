@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use("/user", userRoute);
 app.use("/stock", stockRoute);
 
-
-
+// app.engine('handlebars', exphbs({ defaultLayout : 'main' }))
+// app.set('view engine', 'handlebars')
 
 module.exports = { app }

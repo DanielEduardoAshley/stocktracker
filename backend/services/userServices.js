@@ -7,7 +7,6 @@ return dbconn.one('INSERT INTO users (first_name, last_name, user_uid, email, se
 
 
 userServices.read=(id)=>{
-console.log('dbconn', dbconn)
 return dbconn.any('SELECT * FROM users WHERE id=${id}', {id})
 }
 

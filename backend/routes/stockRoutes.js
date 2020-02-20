@@ -2,7 +2,7 @@ const stockServices = require('../services/stockServices')
 const express = require('express')
 const stockRoutes = express.Router()
 
-stockRoutes.get('/stock', (req,res)=>{
+stockRoutes.get('/', (req,res)=>{
     const {id} = req.body
     stockServices.read(id).catch(err=>{
         console.log(err)
@@ -12,7 +12,8 @@ stockRoutes.get('/stock', (req,res)=>{
 })
 
 stockRoutes.post('/new', (req,res)=>{
-    stockServices.create(symbol, bought_price, quantity).catch(err=>{
+    const { user_id, symbol, bought_price, quantity} = req.body
+    stockServices.create(user_id, symbol, bought_price, quantity).catch(err=>{
         console.log(err)
     })
     .then(data=>{
@@ -22,6 +23,7 @@ stockRoutes.post('/new', (req,res)=>{
 })
 
 stockRoutes.put('/update', (req,res)=>{
+    const {id} = req.body
     stockServices.update(id,symbol, bought_price, quantity).catch(err=>{
         console.log(err)
     })
