@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang='eng'>
+
+<head>
+    <meta charset='utf-8'> 
+
+
+<link rel='stylesheet' href='/main.css'>
+</head>
+<title></title>
+<body>
+    <div>Stock Tracker</div>
+    <button class='logout'>logout</button>
+    <div class='login js-login'>
+            <form>
+                    <label for="Email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <label for="Password">Password:</label><br>
+                    <input type="password" id="password" name="password">
+            </form>
+        <button class='js-loginbtn'>Sign In</button>
+        <button class='js-goto-register'>Register</button>
+    </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+
+
+<script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBwL3wfF1rQeiKMXoU3pBgG_xPmzFj67rw",
+          authDomain: "stocktracker-9ee41.firebaseapp.com",
+          databaseURL: "https://stocktracker-9ee41.firebaseio.com",
+          projectId: "stocktracker-9ee41",
+          storageBucket: "stocktracker-9ee41.appspot.com",
+          messagingSenderId: "587275483785",
+          appId: "1:587275483785:web:8870001ccda6bf8cea6458",
+          measurementId: "G-CG0L6LSSV2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
+
+<script src='/main.js'></script>    
+</body>
+</html>
