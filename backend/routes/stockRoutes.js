@@ -23,8 +23,8 @@ stockRoutes.post('/new', (req,res)=>{
 })
 
 stockRoutes.put('/update', (req,res)=>{
-    const {id} = req.body
-    stockServices.update(id,symbol, bought_price, quantity).catch(err=>{
+    const {id, user_id, symbol, bought_price, quantity} = req.body
+    stockServices.update(id, user_id, symbol, bought_price, quantity).catch(err=>{
         console.log(err)
     })
     .then(data=>{
