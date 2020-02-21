@@ -15,4 +15,8 @@ userServices.update=(id, first_name, last_name,user_uid, email, sessions_id, cas
 return dbconn.one('UPDATE users SET first_name=${first_name}, last_name=${last_name}, user_uid=${user_uid}, email=${email}, sessions_id=${sessions_id},cash_remaining=${cash_remaining}  WHERE id=${id} RETURNING id', {id, first_name, last_name,user_uid, email, sessions_id, cash_remaining })
 }
 
+
+userServices.authentication=(token)=>{
+return db.result('SELECT token FROM users WHERE users.token = ${token}', {token})
+}  
 module.exports = userServices
