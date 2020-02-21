@@ -1,17 +1,20 @@
 const stockServices = require('../services/stockServices')
 const express = require('express')
 const stockRoutes = express.Router()
+const authentication = require('../services/middleware copy')
 
-stockRoutes.get('/', (req,res)=>{
+stockRoutes.get('/', authentication, (req,res)=>{
     const {id} = req.body
-    stockServices.read(id).catch(err=>{
-        console.log(err)
-    }).then(data=>{
-        res.status(200).send(data)
-    })
+    console.log('render')
+    res.render('portfolio')
+    // stockServices.read(id).catch(err=>{
+    //     console.log(err)
+    // }).then(data=>{
+    //     res.status(200).send(data)
+    // })
 })
 
-stockRoutes.post('/new', (req,res)=>{
+stockRoutes.post('/new', authentication, (req,res)=>{
     const { user_id, symbol, bought_price, quantity} = req.body
     stockServices.create(user_id, symbol, bought_price, quantity).catch(err=>{
         console.log(err)
@@ -22,7 +25,7 @@ stockRoutes.post('/new', (req,res)=>{
     })
 })
 
-stockRoutes.put('/update', (req,res)=>{
+stockRoutes.put('/update', authentication, (req,res)=>{
     const {id, user_id, symbol, bought_price, quantity} = req.body
     stockServices.update(id, user_id, symbol, bought_price, quantity).catch(err=>{
         console.log(err)
