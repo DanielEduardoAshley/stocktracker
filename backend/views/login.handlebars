@@ -1,13 +1,14 @@
 
     <div class='login js-login'>
-            <form>
+            {{!-- <form   autocomplete="off"> --}}
                     <label for="Email">Email:</label><br>
-                    <input type="text" id="email" name="email"><br>
+                    <input type="text" id="email" name="email" autocomplete="off"><br>
                     <label for="Password">Password:</label><br>
-                    <input type="password" id="password" name="password">
-            </form>
-        <button class='js-loginbtn'>Sign In</button>
-        <button class='js-goto-register'>Register</button>
+                    <input type="password" id="password" name="password" autocomplete="off">
+                    <button class='js-loginbtn'>Sign In</button>
+                    <button class='js-goto-register'>Register</button>
+            {{!-- </form> --}}
+        
     </div>
 
 

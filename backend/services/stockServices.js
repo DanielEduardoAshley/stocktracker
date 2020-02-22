@@ -6,8 +6,8 @@ return dbconn.one('INSERT INTO stock (user_id, symbol, bought_price, quantity) V
 
 }
 
-stockServices.read=(id)=>{
-return dbconn.any('SELECT * FROM users JOIN stock ON users.id = user_id WHERE users.id=${id}', {id})
+stockServices.read=(user_uid)=>{
+return dbconn.any('SELECT * FROM users JOIN stock ON users.id = user_id WHERE user_uid=${user_uid}', {user_uid})
 }
 
 stockServices.update=(id, user_id, symbol, bought_price, quantity)=>{

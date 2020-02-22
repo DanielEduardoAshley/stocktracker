@@ -15,22 +15,22 @@ userRoutes.post('/new', (req, res)=>{
   
 })
 
-
-
-userRoutes.get('/', authentication, (req,res)=>{
-      const {id} = req.body
-      console.log(id)
-      userServices.read(id).catch(err=>{
-          console.log(err)
-      })
-      .then(data=>{
-        res.status(200).send(data)
-        console.log(data)
-    })
+userRoutes.get('/', (req,res)=>{
+      console.log('works?', req.headers)
+      res.sendStatus(200)
 })
 
 userRoutes.get('/login', (req, res)=>{
     res.render('login')
+})
+
+userRoutes.post('/login', (req, res)=>{
+    const { email , password} = req.body
+    res.redirect('/portfolio')
+})
+
+userRoutes.get('/portfolio', (req, res)=>{
+    res.render('portfolio')
 })
 
 userRoutes.get('/register', (req, res)=>{

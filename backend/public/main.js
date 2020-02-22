@@ -2,7 +2,6 @@
 //-----------GLOBAL HTML OBJECTS
 
 // const inputField = document.querySelector('.js-inputfield');
-const loginPage = document.querySelector('.js-login');
 const logout = document.querySelector('.logout')
 
 
