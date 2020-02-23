@@ -19,7 +19,7 @@ login.addEventListener('click', ()=>{
         axios.get('http://localhost:3005/stock/',{headers:  
         { authorization: `Bearer ${token}` }})
 
-        // window.location.href = "http://localhost:3005/stock/";
+        window.location.href = "http://localhost:3005/stock/";
     })
     .catch(function(error) {
         // Handle Errors here.

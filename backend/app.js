@@ -5,7 +5,8 @@ const exphbs = require('express-handlebars')
 const userRoute = require('./routes/userRoutes');
 const stockRoute = require('./routes/stockRoutes');
 const bodyParser = require('body-parser');
-const cors = require('cors')
+const cors = require('cors');
+
 
 
 app.use(cors())

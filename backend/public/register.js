@@ -13,11 +13,11 @@ register.addEventListener('click', (e)=>{
     e.preventDefault()
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(credentials=>{
+    .then(async(credentials)=>{
         console.log(credentials)
         const user_uid = credentials.user.uid
         const sessions_id = 1234
-        const token = firebase.auth().getIdToken() 
+        const token = await firebase.auth().currentUser.getIdToken()
         axios({
             method: 'post',
             url: 'http://localhost:3005/user/new',
